@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .negr{
+            background-color: blueviolet;
+            display: flex;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <th:block th:each="msg : ${messages}">
+        <h1 class="negr" th:text="${msg}"></h1>
+    </th:block>
+    <a href="cars">к примеру с машинами</a>
+</div>
+</body>
+</html>

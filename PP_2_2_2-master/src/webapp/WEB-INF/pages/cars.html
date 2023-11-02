@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+        <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>марка</th>
+                <th>страна производства</th>
+                <th>год выпуска</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="car : ${cars}">
+                <td th:text="${car.getManufacturer()}"></td>
+                <td th:text="${car.getCountryOfOrigin()}"></td>
+                <td th:text="${car.getYearOfCreating()}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <input id = "Cars-Amount" type = "number">
+    <button id = "SearchButton">find</button>
+    <button  onclick="redirectToIndex()">goBack</button>
+</body>
+<script>
+    const searchButton = document.getElementById("SearchButton");
+    const searchInput = document.getElementById("Cars-Amount");
+    searchButton.addEventListener("click",()=>{
+        window.location.href = "/cars?count=" + searchInput.value;
+    });
+    function redirectToIndex(){
+        window.location.href = "/";
+    }
+</script>
+</html>
